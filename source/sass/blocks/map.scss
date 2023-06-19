@@ -1,0 +1,23 @@
+.map__leaflet {
+  height: 420px;
+  background: url("../../img/map/map.png");
+  background-size: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .map__leaflet {
+    height: 480px;
+    background: url("../../img/map/map_tablet.png");
+  }
+
+  .map {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .map__leaflet {
+    height: 540px;
+    background: url("../../img/map/map_desktop.png");
+  }
+}

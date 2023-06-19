@@ -1,0 +1,149 @@
+.catalog {
+  background-color: $lightest-grey;
+  margin: 0;
+  padding: 50px 17px 44px 23px;
+}
+
+.catalog__filter {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.catalog__filter-group {
+  margin: 0 0 36px;
+}
+
+.catalog__title {
+  display: block;
+  letter-spacing: 0.6px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  color: $base-primary;
+  margin-top: 0;
+  margin-bottom: 4px;
+  margin-right: 6px;
+}
+
+.catalog__descripchion {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: $base-black;
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-right: 4px;
+}
+
+.catalog__filter-title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: $base-black;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.catalog__filter-price {
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+}
+
+.catalog__range-divider {
+  position: relative;
+  width: 8px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    height: 2px;
+    width: 100%;
+    background: $base-grey;
+    content: "";
+  }
+}
+
+.catalog__range {
+  display: flex;
+  justify-content: center;
+}
+
+.catalog__range-wrapper-inputs {
+  display: flex;
+  gap: 18px;
+}
+
+@media (min-width: $tablet-width) {
+  .catalog {
+    padding: 80px 20px 90px;
+  }
+
+  .catalog__descripchion {
+    font-size: 42px;
+    line-height: 64px;
+  }
+
+  .catalog__filter {
+    display: grid;
+    grid-template-columns: 223px 222px 223px;
+    justify-content: center;
+    row-gap: 40px;
+    column-gap: 30px;
+  }
+
+  .catalog__range-wrapper-inputs {
+    gap: 20px;
+  }
+
+  .catalog__filter-group {
+    padding: 0;
+    margin: 0 0 40px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .catalog {
+    padding: 100px 40px 120px;
+    display: grid;
+    grid-template-columns: 318px auto;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    column-gap: 30px;
+  }
+
+  .catalog__title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 0 auto 4px;
+    max-width: 1360px;
+  }
+
+  .catalog__descripchion {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 0 auto 40px;
+    font-size: 42px;
+    line-height: 64px;
+    max-width: 1360px;
+  }
+
+  .catalog__filter {
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+  }
+}

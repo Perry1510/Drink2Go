@@ -1,0 +1,55 @@
+.cost {
+  display: flex;
+}
+
+.cost__input {
+  width: 118px;
+  height: 40px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 2px solid $primary-lighter;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: $base-black;
+  padding: 8px 10px;
+
+  &::placeholder {
+    color: $base-grey;
+  }
+
+  &:focus {
+    border-color: $primary-darker;
+    outline: none;
+  }
+
+  &:disabled {
+    border-color: $light-grey;
+    background: $lightest-grey;
+    color: $base-grey;
+  }
+}
+
+.cost__input::-webkit-outer-spin-button,
+.cost__input::-webkit-inner-spin-button {
+  // Отключает стрелки в input[type="number"]
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-appearance: none;
+  margin: 0;
+  /* stylelint-enable property-no-vendor-prefix */
+}
+
+@media (min-width: $tablet-width) {
+  .cost__input {
+    width: 87px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .cost__input {
+    width: 100%;
+  }
+}

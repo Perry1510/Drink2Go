@@ -1,0 +1,24 @@
+/* здесь используйте глобальные селекторы img, body, html и так далее*/
+body {
+  margin: 0 auto;
+}
+
+a,
+button {
+  overflow-wrap: anywhere;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.hide-mobile {
+  display: none;
+}
+
+@media (min-width: $tablet-width) {
+  .hide-mobile {
+    display: block;
+  }
+}
+
+.page {
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,243 @@
+.header__logo-text {
+  display: none;
+}
+
+.header__container {
+  background-color: $base-white;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-direction: column;
+
+  &--menu-opened {
+    .main-nav__wrapper {
+      display: block;
+    }
+
+    .header__nav-toggle {
+      background-size: 16px 16px;
+      background-image: url("../../img/sprite.svg#header_close-menu");
+    }
+  }
+
+  &--no-js {
+    & .header__nav-toggle {
+      pointer-events: none;
+    }
+
+    & .main-nav__list {
+      position: static;
+    }
+
+    & .header__controls-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    & .header__logo {
+      order: 1;
+    }
+
+    & .main-nav {
+      order: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    & .header__list {
+      order: 2;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.header__controls-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.header__nav-toggle {
+  padding: 0;
+  margin: 0;
+  width: 60px;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 16px 12px;
+  background-position: center;
+  background-image: url("../../img/sprite.svg#header_burger-menu");
+
+  &:active {
+    background-color: $base-secondary;
+  }
+}
+
+.header__list {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header__items {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.header__link {
+  padding: 22px;
+  color: $base-black;
+  text-decoration: none;
+  display: flex;
+  gap: 8px;
+
+  &:hover,
+  &:focus {
+    color: $base-primary;
+    --fill: #7859cf;
+  }
+
+  &:active {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: $base-primary;
+    background-color: $base-secondary;
+    --fill: #7859cf;
+  }
+}
+
+.header__link-img {
+  display: block;
+  text-decoration: none;
+}
+
+.header__link-text {
+  display: none;
+  text-decoration: none;
+}
+
+@media (min-width: $tablet-width) {
+  .header__logo {
+    margin-right: 6px;
+    margin-left: 0;
+
+    & svg {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      width: 82px;
+      height: 36px;
+      background-image: url("../../img/header/logo-tablet.svg");
+    }
+  }
+
+  .header__link {
+    padding: 32px 22px;
+  }
+
+  .header__items:has(.header__nav-toggle) {
+    display: none;
+  }
+
+  .header__controls-wrapper {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .header__logo-text {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: $base-black;
+    display: block;
+    text-decoration: none;
+    max-width: 126px;
+    margin-left: 20px;
+  }
+
+  .header__link-text {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .header__link {
+    &:hover,
+    &:focus {
+      outline: none;
+      color: $base-primary;
+      --fill: #7859cf;
+
+      &::before {
+        display: block;
+      }
+    }
+
+    &--basket {
+      --icon: url("../../img/sprite.svg#header_basket-logo");
+    }
+
+    &--user {
+      --icon: url("../../img/sprite.svg#header_user-logo");
+    }
+
+    &:hover .header__link-img,
+    &:focus .header__link-img,
+    &:active .header__link-img {
+      display: none;
+    }
+
+    &:active {
+      background-color: $base-secondary;
+    }
+
+
+    &::before {
+      content: "";
+      display: none;
+      width: 16px;
+      height: 16px;
+      mask: var(--icon) no-repeat center / contain;
+      background: var(--fill);
+    }
+  }
+
+  .header__logo {
+    &::before {
+      width: 170px;
+      background-image: url("../../img/header/logo-desktop.svg");
+    }
+  }
+
+  .header__controls-wrapper {
+    padding: 0 40px;
+  }
+
+  .header {
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+
+  .header__list {
+    gap: 20px;
+  }
+}

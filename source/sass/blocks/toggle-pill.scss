@@ -1,0 +1,107 @@
+.toggle-pill {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  & label {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $base-black;
+    flex-grow: 1;
+    width: 200px;
+    word-wrap: break-word;
+  }
+}
+
+.toggle-pill input[type="checkbox"] + .toggle-pill__mark {
+  display: block;
+  position: relative;
+  width: 42px;
+  height: 24px;
+  background-color: $base-grey;
+  border-radius: 1em;
+  box-sizing: border-box;
+  border: 2px solid $base-grey;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+
+.toggle-pill input[type="checkbox"] + .toggle-pill__mark::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 1em;
+  background-color: $base-white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.toggle-pill input[type="checkbox"]:checked + .toggle-pill__mark {
+  background-color: $base-primary;
+  border-color: $base-primary;
+}
+
+.toggle-pill input[type="checkbox"]:checked:disabled + .toggle-pill__mark {
+  background-color: $light-grey;
+
+  & + label {
+    color: $base-grey;
+  }
+}
+
+.toggle-pill input[type="checkbox"]:checked + .toggle-pill__mark::before {
+  left: 18px;
+  transform: rotate(45deg);
+}
+
+.toggle-pill input[type="checkbox"]:checked:disabled + .toggle-pill__mark::before {
+  background-color: $base-grey;
+}
+
+.toggle-pill input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0 auto;
+  width: 42px;
+  height: 24px;
+  display: block;
+  opacity: 0;
+  z-index: 10;
+
+  &:disabled + .toggle-pill__mark {
+    background-color: $light-grey;
+    border-color: $light-grey;
+
+    & + label {
+      color: $base-grey;
+    }
+
+    &::before {
+      background-color: $lightest-grey;
+    }
+  }
+
+  &:hover:not(:disabled) + .toggle-pill__mark,
+  &:focus + .toggle-pill__mark {
+    background-color: $primary-opacity;
+    border-color: $primary-lighter;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .toggle-pill {
+    & label {
+      width: 171px;
+    }
+  }
+}

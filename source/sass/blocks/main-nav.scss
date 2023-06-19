@@ -1,0 +1,35 @@
+.main-nav__wrapper {
+  display: none;
+}
+
+.main-nav__list {
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid $base-secondary;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: $base-white;
+  z-index: 20;
+}
+
+
+@media (min-width: $tablet-width) {
+  .main-nav__wrapper {
+    display: block;
+  }
+
+  .main-nav__list {
+    position: static;
+    display: flex;
+    gap: 0;
+    border-top: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-nav__list {
+    gap: 20px;
+  }
+}

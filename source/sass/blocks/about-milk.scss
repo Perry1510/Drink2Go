@@ -1,0 +1,32 @@
+.about-milk {
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-milk__title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: $base-black;
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.about-milk__list {
+  margin: 0 0 4px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (min-width: $desktop-width) {
+  .about-milk__list {
+    margin-bottom: 0;
+  }
+}

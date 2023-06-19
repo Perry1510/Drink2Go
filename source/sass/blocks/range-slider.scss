@@ -1,0 +1,116 @@
+// Переопределение стилей библиотеки noUiSlider
+/* stylelint-disable declaration-no-important */
+.range-slider__target {
+  height: 24px !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 24px;
+
+  &[disabled] {
+    & .range-slider__handle {
+      cursor: not-allowed !important;
+      border: 2px solid $base-grey !important;
+    }
+
+    & .range-slider__connect {
+      cursor: not-allowed !important;
+      background-color: $base-grey !important;
+    }
+  }
+}
+
+.range-slider__connects {
+  position: absolute !important;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 4px !important;
+}
+
+.range-slider__connect {
+  background-color: $primary-lighter !important;
+}
+
+.range-slider__base {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    height: 2px;
+    width: 100%;
+    background-color: $light-grey;
+  }
+}
+
+.range-slider__handle {
+  width: 24px !important;
+  height: 24px !important;
+  background: $base-white !important;
+  border-radius: 50px !important;
+  border: 2px solid $primary-lighter !important;
+  cursor: pointer !important;
+  top: 0 !important;
+  right: 0 !important;
+  box-shadow: none !important;
+
+  &::before,
+  &::after {
+    display: none !important;
+  }
+
+  &--lower {
+    transform: translateX(100%);
+  }
+
+  &:focus,
+  &:hover {
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      display: block !important;
+      width: 16px !important;
+      height: 16px !important;
+      background: $primary-opacity !important;
+      left: auto !important;
+      top: auto !important;
+      border-radius: 50%;
+    }
+  }
+
+  &:active {
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      display: block !important;
+      width: 16px !important;
+      height: 16px !important;
+      background: $base-primary !important;
+      left: auto !important;
+      top: auto !important;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .range-slider__target {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .range-slider__target {
+    margin-bottom: 22px;
+  }
+}
+/* stylelint-enable declaration-no-important */

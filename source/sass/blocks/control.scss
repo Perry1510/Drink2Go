@@ -1,0 +1,78 @@
+.control {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+.control__input {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 10;
+
+  &:checked + .control__mark {
+    border: 2px solid $base-primary;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $base-primary;
+    }
+  }
+
+  &:disabled + .control__mark {
+    border: 2px solid $light-grey;
+
+    &::before {
+      background-color: $light-grey;
+    }
+
+    & + .control__label {
+      color: $base-grey;
+    }
+  }
+
+  &:hover + .control__mark,
+  &:focus + .control__mark {
+    &::before {
+      background-color: $primary-opacity;
+    }
+  }
+}
+
+.control__mark {
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  background: $base-white;
+  border: 2px solid $base-grey;
+  border-radius: 50%;
+}
+
+.control__label {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $base-black;
+  width: 218px;
+}
+
+@media (min-width: $tablet-width) {
+  .control__label {
+    width: 188px;
+  }
+}
